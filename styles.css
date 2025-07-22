@@ -428,34 +428,43 @@ nav {
 
 /* Projects Section */
 .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 24px;
-  align-items: stretch; /* Makes cards equal height */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    align-items: stretch;
 }
 
 .project-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%; /* Important: make height flexible */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 20px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.05); /* translucent */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
 }
 
-
 .project-image {
+    border-radius: 12px;
+    overflow: hidden; /* ✅ Clip the image inside the curve */
+    width: 100%;
     height: 200px;
-    overflow: hidden;
-    flex-shrink: 0; /* Prevent image from shrinking */
 }
 
 .project-image img {
     width: 100%;
-    border-radius: 12px;
-    margin-bottom: 16px;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
 }
 
 .project-card:hover .project-image img {
@@ -463,30 +472,31 @@ nav {
 }
 
 .project-info {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding-top: 16px;
 }
 
 .project-info h3 {
-    margin-top: 0;
     margin-bottom: 10px;
     font-size: 1.3rem;
 }
 
 .project-info p {
-  flex-grow: 1; /* Let description grow and push others down */
+    flex-grow: 1;
+    margin-bottom: 12px;
 }
 
 .project-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
 }
 
 .project-tag {
-    background-color: rgba(0, 217, 255, 0.15);
+    background-color: rgba(0, 217, 255, 0.1);
     color: #00d9ff;
     padding: 5px 10px;
     border-radius: 999px;
@@ -494,23 +504,29 @@ nav {
     font-weight: 500;
 }
 
+
 .project-links {
-  display: flex;
-  justify-content: flex-start;
-  gap: 16px; /* Space between "View Code" & "Live Demo" */
-  margin-top: 12px;
-  flex-wrap: wrap;
+    display: flex;
+    justify-content: flex-start;
+    gap: 16px;
+    margin-top: auto;
 }
 
 .project-links a {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.3s ease;
 }
 
 .project-links a:hover {
     color: #00d9ff;
 }
+
+
 
 /* Footer */
 footer {
