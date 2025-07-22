@@ -18,8 +18,10 @@ function closeMobileMenu() {
     navLinks.classList.remove('active');
     navOverlay.classList.remove('active');
     document.body.classList.remove('menu-open');
+    document.body.style.overflow = ''; // <-- Add this line
     menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
 }
+
 
 // Event Listeners for Mobile Menu
 menuToggle.addEventListener('click', toggleMobileMenu);

@@ -952,3 +952,24 @@ html, body {
 header {
     z-index: 202 !important;
 }
+
+
+/* Fix unexpected vertical scroll */
+body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* Prevent floating elements and particles from causing overflow */
+.floating-element {
+    max-height: 100vh;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+#particles-js {
+    overflow: hidden;
+    max-height: 100vh;
+}
+
