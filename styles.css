@@ -32,7 +32,6 @@ header {
     padding: 30px 0;
     position: relative;
     z-index: 10;
-    overflow-x: hidden;
 }
 
 nav {
@@ -936,8 +935,6 @@ footer {
 
 /* Prevent horizontal scrolling */
 html, body {
-    overscroll-behavior: none;
-    -webkit-overflow-scrolling: touch;
     overflow-x: hidden;
     width: 100%;
 }
@@ -968,6 +965,13 @@ header {
     z-index: 202 !important;
 }
 
+
+/* Fix unexpected vertical scroll */
+body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
 
 /* Prevent floating elements and particles from causing overflow */
 .floating-element {
